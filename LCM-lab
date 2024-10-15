@@ -1,27 +1,31 @@
 #include <iostream>
 
-
+// Ֆունկցիա՝ երկու թվերի առավելագույն ընդհանուր բաժանարարը (GCD) գտնելու համար
 int gcd(int a, int b) {
+    // Օգտագործում ենք Էվկլիդեսի ալգորիթմը՝ GCD գտնելու համար
     while (b != 0) {
         int temp = b;
-        b = a % b;
-        a = temp;
+        b = a % b;  
+        a = temp;  
     }
-    return a;
+    return a;  
 }
 
+// Ֆունկցիա՝ երկու թվերի նվազագույն ընդհանուր բազմապատիկը (LCM) գտնելու համար
 int lcm(int a, int b) {
-    if (a == 0 || b == 0) return 0; 
-    return (a * b) / gcd(a, b);
+    if (a == 0 || b == 0) return 0;  
+    return (a * b) / gcd(a, b);  
 }
 
 int main() {
     int num1, num2;
 
-    std::cout << "Enter two numbers: ";
+    
+    std::cout << "Մուտքագրեք երկու թիվ: ";
     std::cin >> num1 >> num2;
 
-    std::cout << "The least common multiple is: " << lcm(num1, num2) << std::endl;
+    
+    std::cout << "Նվազագույն ընդհանուր բազմապատիկը է: " << lcm(num1, num2) << std::endl;
 
-    return 0;
+    return 0;  
 }
